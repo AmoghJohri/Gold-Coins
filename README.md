@@ -16,7 +16,15 @@ number of 1s in the binary representation of ​*n*.
 - [ ] Header files
 - [ ] makefile
 - [ ] README
+    - [ ] Sources referred
+    - [ ] Data structures
+    - [ ] Pseudo-code
+    - [ ] Proof of correctness
+    - [ ] Instructions to compile and run
+    - [ ] Defects/Side-effects
+    - [ ] Individual contributions
 - [ ] Subfolder of test cases
+    - [ ] Document detailing format of test cases, input and expected output
 
 ### Contributors
 - [Advait Lonkar](https://github.com/advait-l) 
