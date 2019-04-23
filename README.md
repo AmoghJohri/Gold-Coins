@@ -12,6 +12,6 @@ algorithm that finds a genuine coin in ​*n-B(n)* weighings, where ​*B(n)* de
 number of 1s in the binary representation of ​*n*.
 
 ### Contributors
-- Advait Lonkar : @advaitl
-- Amogh Johri : @AmoghJohri
+- [Advait Lonkar](https://github.com/advait-l) 
+- [Amogh Johri](https://github.com/AmoghJohri) 
 
