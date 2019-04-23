@@ -14,8 +14,8 @@ number of 1s in the binary representation of ​*n*.
 
 ## Task List
 - [ ] Source files
-- [ ] Header files
-- [ ] makefile
+- [x] Header files
+- [x] makefile
 - [ ] README
     - [ ] Sources referred
     - [ ] Data structures
