@@ -1,6 +1,6 @@
 # Gold-Coins
 
-### Problem Statement
+## Problem Statement
 We have ​*n* ​gold coins out of which some coins are fake and the rest are
 genuine. The number of genuine coins is strictly greater than the number of fake
 coins. Coins of the same type have the same weight. We have a balance using
@@ -11,7 +11,7 @@ coin. This uses ​*n-1*​ weighings. We want something slightly better. Design
 algorithm that finds a genuine coin in ​*n-B(n)* weighings, where ​*B(n)* denotes the
 number of 1s in the binary representation of ​*n*.
 
-### Task List
+## Task List
 - [ ] Source files
 - [ ] Header files
 - [ ] makefile
@@ -26,7 +26,7 @@ number of 1s in the binary representation of ​*n*.
 - [ ] Subfolder of test cases
     - [ ] Document detailing format of test cases, input and expected output
 
-### Contributors
+## Contributors
 - [Advait Lonkar](https://github.com/advait-l) 
 - [Amogh Johri](https://github.com/AmoghJohri) 
 
