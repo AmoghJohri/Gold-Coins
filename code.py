@@ -19,13 +19,14 @@ def compare(w1, w2):
 
 def weight_of_genuine_coin(n, arr):
     global steps
+    global token
     aux = []
     if n%2 == 0 :
         counter = 0
         while counter < n-1:
             if compare(arr[counter], arr[counter + 1]):
                 aux.append(arr[counter])
-                steps = steps + 1
+            steps = steps + 1
             counter = counter + 2
         if len(aux) == 1:
             return aux[0]
@@ -40,8 +41,10 @@ def weight_of_genuine_coin(n, arr):
         while counter < n-1:
             if compare(arr[counter], arr[counter + 1]):
                 aux.append(arr[counter])
-                steps = steps + 1
+            steps = steps + 1
             counter = counter + 2
+        if len(aux) % 2 == 1:
+            token = aux[-1]
         if len(aux) == 1:
             return aux[0]
         elif len(aux) == 0:
