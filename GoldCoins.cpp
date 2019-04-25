@@ -50,6 +50,7 @@ int weightOfGenuineCoin(int numberOfCoins, vector<int> coins){
 
     /* Case 2 : Number of coins are odd */
     else{
+        token = coins[coinss.size() - 1];
         coins.erase(coins.end() - 1);
         numberOfCoins = numberOfCoins - 1;
         int counter = 0;
