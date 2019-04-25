@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#include<fstream>
 using namespace std;
 
 /* Global variables declarations */
@@ -11,6 +12,9 @@ int balance(int, int);
 int B(int);
 
 int main(){
+    ofstream myfile;
+    myfile.open ("Report.txt");
+
     int numberOfCoins;
     cin>>numberOfCoins;
     vector<int> coins;
@@ -21,7 +25,7 @@ int main(){
 
     for(int i = 0; i < numberOfCoins; i++){
         int x = rand()%2;
-        cout << x << " ";
+        myfile << x << " ";
         if(x == 0)
             numOf0s = numOf0s + 1;
         else
@@ -31,16 +35,20 @@ int main(){
     token = coins[coins.size() - 1];    // Last coin
     if(numOf0s == numOf1s)
     {
-        cout << "\n" << "INVALID INPUT!!!" << "\n";
+        myfile << "\n" << "INVALID INPUT!!!" << "\n";
         return 0;
     }
 
-    cout<<"\n\nWeight of genuine coin: "<< weightOfGenuineCoin(numberOfCoins, coins)<<endl;
-    cout<<"Number of Weighings: "<< weighings << endl;
-    cout<<"Number of Weighing permitted: "<< numberOfCoins - B(numberOfCoins) << endl;
-    cout <<"Num Of 1s : " << numOf1s;
-    cout <<"\nNum Of 0s : " << numOf0s;
-    cout <<"\n";
+    
+
+    myfile<<"\n\nWeight of genuine coin: "<< weightOfGenuineCoin(numberOfCoins, coins)<<endl;
+    myfile<<"Number of Weighings: "<< weighings << endl;
+    myfile<<"Number of Weighing permitted: "<< numberOfCoins - B(numberOfCoins) << endl;
+    myfile <<"Num Of 1s : " << numOf1s;
+    myfile <<"\nNum Of 0s : " << numOf0s;
+    myfile <<"\n";
+
+    myfile.close();
    return 0;
 }
 
