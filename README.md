@@ -19,7 +19,7 @@ number of 1s in the binary representation of ​*n*.
 - [ ] README
     - [ ] Sources referred
     - [ ] Data structures
-    - [ ] Pseudo-code
+    - [x] Pseudo-code
     - [ ] Proof of correctness
     - [x] Instructions to compile and run
     - [ ] Defects/Side-effects
