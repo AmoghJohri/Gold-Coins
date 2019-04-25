@@ -78,225 +78,225 @@ In the main:
 ### Proof Of Correctness 
 Proving by induction
 #### Base Cases:
-    1. number of coins = 1
+1. number of coins = 1
 
-        - Pop the coin since it is odd.
+    - Pop the coin since it is odd.
 
-        - Array formed is empty.
+    - Array formed is empty.
 
-        - Therefore, the answer is the only coin present.
+    - Therefore, the answer is the only coin present.
 
-    2. number of coins = 2
+2. number of coins = 2
 
-        - Compare the elements.
-        (No case possible where they are equal)
-        
-        - New array consists of 1 coin.
+    - Compare the elements.
+    (No case possible where they are equal)
+    
+    - New array consists of 1 coin.
 
-        - Hence proved by case a.
+    - Hence proved by case a.
 
 #### Induction Hypothesis:
-    Works correctly for *k* coins.
+Works correctly for *k* coins.
 
 #### Inductive Step:
-    For *k + 1* coins, we have:
-    1. *k* is even, i.e. *k + 1* is odd
+For *k + 1* coins, we have:
+1. *k* is even, i.e. *k + 1* is odd
 
-        - Pop the last coin and store it.
+    - Pop the last coin and store it.
 
-        - We have *k* elements left.
+    - We have *k* elements left.
 
-        - There can be 2 cases:
+    - There can be 2 cases:
 
-            - **Case 1**: There are *> k/2* gold coins.
+        - **Case 1**: There are *> k/2* gold coins.
 
-                - This is lower bounded by *k/2 + 1* which is 
-                    *k/2 + 1 > k/2 + 1/2 = (k + 1)/2*
+            - This is lower bounded by *k/2 + 1* which is 
+                *k/2 + 1 > k/2 + 1/2 = (k + 1)/2*
 
-                - Therefore, there is a majority coin in the complete array.
+            - Therefore, there is a majority coin in the complete array.
 
-                - As we know our algoritm can find the majority coin in a k-array(inductive hypothesis), this can be solved.
+            - As we know our algoritm can find the majority coin in a k-array(inductive hypothesis), this can be solved.
 
-            - **Case 2**: There are exactly *k/2* gold coins
+        - **Case 2**: There are exactly *k/2* gold coins
 
-                - Irrespective of the arrangement of the coins in the array, in every subsequent step, our new array will be an even length array.
+            - Irrespective of the arrangement of the coins in the array, in every subsequent step, our new array will be an even length array.
 
-                - As for every operation carried out over one type of coin, an anlogous operation will occur with the other type of coin, since they are equal in number.
+            - As for every operation carried out over one type of coin, an anlogous operation will occur with the other type of coin, since they are equal in number.
 
-                - Therefore, we end up with an even array of equal number of gold and fakr coins due to symmetry.
+            - Therefore, we end up with an even array of equal number of gold and fakr coins due to symmetry.
 
-                - This will finally lead to the case where we get an empty array and here we return the stored value of the last coin of the original array as the genuine gold coin.
-                *last coin + k/2 = k/2 + 1 > (k+1)/2*
+            - This will finally lead to the case where we get an empty array and here we return the stored value of the last coin of the original array as the genuine gold coin.
+            *last coin + k/2 = k/2 + 1 > (k+1)/2*
 
-    2. *k* is odd, i.e. *k + 1* is even.
+2. *k* is odd, i.e. *k + 1* is even.
 
-        - Consider the first *k* elements.
+    - Consider the first *k* elements.
 
-        - Since *k* is odd, we get *g* genuine coins and *f* fake coins.
+    - Since *k* is odd, we get *g* genuine coins and *f* fake coins.
 
-        - *g < f* is not possible since if *g < f*, then *f* is at least *g + 1*, so that  if the *(k + 1)th* coin is genuine, then there'll be equal number of genuine and fake coins which is a contradiction.
+    - *g < f* is not possible since if *g < f*, then *f* is at least *g + 1*, so that  if the *(k + 1)th* coin is genuine, then there'll be equal number of genuine and fake coins which is a contradiction.
 
-        - Also, *g = f* is also not possible, since *k* is odd.
+    - Also, *g = f* is also not possible, since *k* is odd.
 
-        - Therefore, *g > f*, *g* is lower bounded by *(f + 1)*.
+    - Therefore, *g > f*, *g* is lower bounded by *(f + 1)*.
 
-        - For *g > (f + 1)*, the majority coin in the k-array is the majority coin in the entire array. 
+    - For *g > (f + 1)*, the majority coin in the k-array is the majority coin in the entire array. 
 
-        - And for *g = (f + 1)*, *g* is the majority in  the k-array. Now, if the last coin is a genuine coin, *g* is still the majority. The last coin cannot be fake since then *g* will be equal to *f* which is a contradiction. 
+    - And for *g = (f + 1)*, *g* is the majority in  the k-array. Now, if the last coin is a genuine coin, *g* is still the majority. The last coin cannot be fake since then *g* will be equal to *f* which is a contradiction. 
 
-    Therefore, the majority in the k-array is the majority in the (k + 1)-array.
+Therefore, the majority in the k-array is the majority in the (k + 1)-array.
 
-    Hence proved.
+Hence proved.
 
 ### Proof of Running Time
 #### Base Cases:
-    1. number of coins = 1
-        - Pop the last coin.
+1. number of coins = 1
+    - Pop the last coin.
 
-        - Array formed is empty. So the genuine coin is the only coin.
+    - Array formed is empty. So the genuine coin is the only coin.
 
-        - Comparisons required = 0 <= *n - B(n)* = 1 - 1 = 0
+    - Comparisons required = 0 <= *n - B(n)* = 1 - 1 = 0
 
-    2. number of coins = 2
-        - Compare the coins. (No case possible where they are equal)
+2. number of coins = 2
+    - Compare the coins. (No case possible where they are equal)
 
-        - Array formed contains 1 coin, which is proved by the above case.
+    - Array formed contains 1 coin, which is proved by the above case.
 
-        - Comparisons required = 1 <= *n - B(n)* = 2 - 1 = 1
+    - Comparisons required = 1 <= *n - B(n)* = 2 - 1 = 1
 
 #### Induction Hypothesis:
-    Works for *k* coins in <= *k - B(k)* comparisons.
+Works for *k* coins in <= *k - B(k)* comparisons.
 
 #### Inductive Step:
-    For *(k + 1)* coins we have, 
+For *(k + 1)* coins we have, 
 
-    1. If *k* is odd, i.e. *(k + 1)* is even.
-        - Now, (k - B(k)) < ((k + 1) - B(k + 1))
+1. If *k* is odd, i.e. *(k + 1)* is even.
+    - Now, (k - B(k)) < ((k + 1) - B(k + 1))
 
-        - (x(1)x(2)x(3)...x(i)1) : Binary representation of k, as k is odd; where x(i) is 0 or 1.
+    - (x(1)x(2)x(3)...x(i)1) : Binary representation of k, as k is odd; where x(i) is 0 or 1.
 
-        - (y(1)y(2)y(3)...y(i)0) : Binary representation of (k + 1), as k is odd; where y(i) is 0 or 1.
+    - (y(1)y(2)y(3)...y(i)0) : Binary representation of (k + 1), as k is odd; where y(i) is 0 or 1.
 
-        - k - B(k) <= (k + 1) - B(k + 1)
+    - k - B(k) <= (k + 1) - B(k + 1)
 
-        -1 <= B(k) - B(k + 1)
+    -1 <= B(k) - B(k + 1)
 
-        B(k + 1) - B(k) <= 1
+    B(k + 1) - B(k) <= 1
 
-        **Proof by induction** : 
+    **Proof by induction** : 
 
-            - Base case:
+        - Base case:
 
-                Binary representation of length 1 which is odd i.e. n = 1; B(n) = 1.
+            Binary representation of length 1 which is odd i.e. n = 1; B(n) = 1.
 
-                n + 1 = 10; B(n + 1) = 1
+            n + 1 = 10; B(n + 1) = 1
 
-                B(n + 1) - B(n) = 1 - 1 = 0 <= 1
-                Hence proved
+            B(n + 1) - B(n) = 1 - 1 = 0 <= 1
+            Hence proved
 
-            - Induction Hypothesis: 
+        - Induction Hypothesis: 
 
-                Works with binary representation of length k which is odd.
+            Works with binary representation of length k which is odd.
 
-            - Inductive Step:
+        - Inductive Step:
 
-                In the binary representation of length (k + 1), we have two cases:
+            In the binary representation of length (k + 1), we have two cases:
 
-                1. The leftmost bit does not change:
-                    
-                    Proof by induction hypothesis.
+            1. The leftmost bit does not change:
+                
+                Proof by induction hypothesis.
 
-                2. 1. The leftmost bit changes from 0 to 1:
+            2. 1. The leftmost bit changes from 0 to 1:
 
-                        - This number will be of the form: (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + x(k-1)2<sup>(k-1)</sup> + . . . + 0)
+                    - This number will be of the form: (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + x(k-1)2<sup>(k-1)</sup> + . . . + 0)
 
-                            i.e. (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + . . . + 0) - (y(k)2<sup>(k)</sup> + . . . + 1) = 1
+                        i.e. (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + . . . + 0) - (y(k)2<sup>(k)</sup> + . . . + 1) = 1
 
-                            i.e. (2<sup>(k+1)</sup> - 1) - Sum(2<sup>(i)</sup>x(i)) = 1
+                        i.e. (2<sup>(k+1)</sup> - 1) - Sum(2<sup>(i)</sup>x(i)) = 1
 
-                            i.e. 2<sup>(k)</sup> - 1 = Sum(2<sup>(i)</sup>x(i))
+                        i.e. 2<sup>(k)</sup> - 1 = Sum(2<sup>(i)</sup>x(i))
 
-                            But 2<sup>(k)</sup> - 1 = Sum(2<sup>(i-1)</sup>).1
+                        But 2<sup>(k)</sup> - 1 = Sum(2<sup>(i-1)</sup>).1
 
-                            Therefore, x(i) = 1
+                        Therefore, x(i) = 1
 
-                        - Binary representation of B(n) = k-ones (0111...111)
+                    - Binary representation of B(n) = k-ones (0111...111)
 
-                        - Binary representation of B(n + 1) = 1 one and k-zeroes (1000...0)
+                    - Binary representation of B(n + 1) = 1 one and k-zeroes (1000...0)
 
-                        - Clearly, (1 - k) <= 1 since k >= 0  
-                    
-                    2. The leftmost bit changes from 1 to 0:
+                    - Clearly, (1 - k) <= 1 since k >= 0  
+                
+                2. The leftmost bit changes from 1 to 0:
 
-                        - n + 1 -> (0(2<sup>(k+1)</sup>) + Sum(x(i)2<sup>(i)</sup>))
-                            
-                            n -> (2<sup>(k+1)</sup>) + Sum(y(i)2<sup>(i)</sup>)
+                    - n + 1 -> (0(2<sup>(k+1)</sup>) + Sum(x(i)2<sup>(i)</sup>))
+                        
+                        n -> (2<sup>(k+1)</sup>) + Sum(y(i)2<sup>(i)</sup>)
 
-                            n - (n + 1) > 0 which is not possible hence a contradiction.
-            
-        - Therefore, B(n) - B(n + 1) <= 1 for n being odd.
+                        n - (n + 1) > 0 which is not possible hence a contradiction.
         
-        - B(n) is solved in <= n - B(n) steps by inductive hypothesis.
+    - Therefore, B(n) - B(n + 1) <= 1 for n being odd.
+    
+    - B(n) is solved in <= n - B(n) steps by inductive hypothesis.
 
-        - B(n + 1) is solved in <= n - B(n) <= (n + 1) - B(n + 1) steps.
+    - B(n + 1) is solved in <= n - B(n) <= (n + 1) - B(n + 1) steps.
 
-        Hence proved.
+    Hence proved.
 
-    2.  If k is even, i.e. (k + 1) is odd.
-        
-        k - B(k) = (k + 1) - B(k + 1)
+2.  If k is even, i.e. (k + 1) is odd.
+    
+    k - B(k) = (k + 1) - B(k + 1)
 
-        - Now, from the proof of correctness, we pop the last element and work with the k-length array where k is even.
+    - Now, from the proof of correctness, we pop the last element and work with the k-length array where k is even.
 
-        - This forms two cases:
-            - Case 1:
+    - This forms two cases:
+        - Case 1:
 
-                - We find a majority element in the k-array hten, number of that majority element is lower bounded by (k/2 + 1).
+            - We find a majority element in the k-array hten, number of that majority element is lower bounded by (k/2 + 1).
 
-                - It forms the majority for (k + 1) elements as well irrespective of the type of (k + 1)th element.
+            - It forms the majority for (k + 1) elements as well irrespective of the type of (k + 1)th element.
 
-                - Since the majority element of k-array can be found in k - B(k) comparisons by inductive hypothesis, the (k + 1)-array can be solved in (k + 1) - B(k + 1) comparisons.
+            - Since the majority element of k-array can be found in k - B(k) comparisons by inductive hypothesis, the (k + 1)-array can be solved in (k + 1) - B(k + 1) comparisons.
 
-            - Case 2:
+        - Case 2:
 
-                - No majority element exists in the first k-elements i.e. it has (k/2) gold coins and (k/2) fake coins.
+            - No majority element exists in the first k-elements i.e. it has (k/2) gold coins and (k/2) fake coins.
 
-                - By symmetry, for every gold coin added to the aux array, we have a fake coin that can be added to the aux array.
+            - By symmetry, for every gold coin added to the aux array, we have a fake coin that can be added to the aux array.
 
-                - Now the number of comparisons are greater for a greater number of coins.
+            - Now the number of comparisons are greater for a greater number of coins.
 
-                - For a single type of coin, the highest number coins which can be added to the aux array is bounded by (n/2) -> if n coins of one type are present.
+            - For a single type of coin, the highest number coins which can be added to the aux array is bounded by (n/2) -> if n coins of one type are present.
 
-                - Therefore, for (k/2) gold coins and (k/2) fake coins, the maximum length aux array consists of (k/4) gold coins and (k/4) fake coins. For a k-array, k being even, number of comparisons are (k/2).
+            - Therefore, for (k/2) gold coins and (k/2) fake coins, the maximum length aux array consists of (k/4) gold coins and (k/4) fake coins. For a k-array, k being even, number of comparisons are (k/2).
 
-                - Now, total number of comparisons till we obtain an array of 0 length is = 
-                    (k/2 + k/4 + . . . + 1)
+            - Now, total number of comparisons till we obtain an array of 0 length is = 
+                (k/2 + k/4 + . . . + 1)
 
-                    = (1 + 2  + 4 + . . . + k/2)
+                = (1 + 2  + 4 + . . . + k/2)
 
-                    = 1(1 - 2<sup>(log(k/2))</sup>)/(1 - 2)
+                = 1(1 - 2<sup>(log(k/2))</sup>)/(1 - 2)
 
-                    = (2<sup>(log(k/2))</sup> - 1)<sup>2</sup>
+                = (2<sup>(log(k/2))</sup> - 1)<sup>2</sup>
 
-                    = 2<sup>(log(k) / log(2))</sup> - 1
+                = 2<sup>(log(k) / log(2))</sup> - 1
 
-                    = 2<sup>(log(k))</sup> - 1
+                = 2<sup>(log(k))</sup> - 1
 
-                    = (k - 1) comparisons  
+                = (k - 1) comparisons  
 
-                - Now, the upper bound is achieved for k being divisible by 2, 4, 8, . . ., (k/2)
+            - Now, the upper bound is achieved for k being divisible by 2, 4, 8, . . ., (k/2)
 
-                    So, k is some power of 2.
+                So, k is some power of 2.
 
-                    So the number of comparisons is maximum for k being a power of 2.
+                So the number of comparisons is maximum for k being a power of 2.
 
-                    Therefore, B(k) = 1
+                Therefore, B(k) = 1
 
-                    Comparisons required = (k - 1) = k - B(k)
+                Comparisons required = (k - 1) = k - B(k)
 
-                    = (k + 1) - B(k + 1)
+                = (k + 1) - B(k + 1)
 
-                Hence proved.            
+            Hence proved.            
                  
 ## Instructions To Compile And Run
 - Compile the source code GoldCoins.cpp using g++
