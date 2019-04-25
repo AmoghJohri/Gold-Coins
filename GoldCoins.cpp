@@ -1,62 +1,41 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-int steps = 0;
-
+/* Global variables declarations */
+int weighings = 0;
 int token;
 
+/* Functions declaration */
 int weightOfGenuineCoin(int, vector<int>);
-int compare(int, int);
+int balance(int, int);
 
 int main(){
-    int n;
-    cin>>n;
-    vector<int> arr;
-    for(int i = 0; i < n; i++){
+    int numberOfCoins;
+    cin>>numberOfCoins;
+    vector<int> coins;
+    for(int i = 0; i < numberOfCoins; i++){
         int x;
         cin>>x;
-        arr.push_back(x);
+        coins.push_back(x);
     }
-    token = arr[arr.size() - 1];
+    token = coins[coins.size() - 1];    // Last coin
 
-    cout<<"Weight: "<< weightOfGenuineCoin(n, arr)<<endl;
-    cout<<"Steps: "<< steps << endl;
-    
-
-
-    /*
-    Comparison : If two coins are same - take them down as 1 together.
-    */
-
-    /*
-    n coins
-    if n is even
-
-    if n is odd - there'll be a coin left : last
-        n-1/2 comparisons - k coins remaining
-        k : [0, n/2]
-        if k is odd
-            keep doing comparisons the same way
-        else if k is even
-            keep making comparisons till you get 1,
-            if you get one coin left - make that the last
-            if the coins vanish, then the last coin will be the gold coin
-            
-    */
+    cout<<"Weight: "<< weightOfGenuineCoin(numberOfCoins, coins)<<endl;
+    cout<<"weighings: "<< weighings << endl;
    return 0;
 }
 
 
-int weightOfGenuineCoin(int n, vector<int> arr){
+int weightOfGenuineCoin(int numberOfCoins, vector<int> coins){
     vector<int> aux;
-    //Even
-    if(n%2 == 0){
+    /* Case 1 : Number of coins are even */
+    if(numberOfCoins%2 == 0){
         int counter = 0;
-        while(counter < n-1){
-            if(compare(arr[counter], arr[counter + 1])){
-                aux.push_back(arr[counter]);
+        while(counter < numberOfCoins-1){
+            if(balance(coins[counter], coins[counter + 1])){
+                aux.push_back(coins[counter]);
             }
-            steps += 1;
+            weighings += 1;
             counter += 2;
         }
         if(aux.size() == 1){
@@ -69,16 +48,16 @@ int weightOfGenuineCoin(int n, vector<int> arr){
 
     }
 
-    //Odd
+    /* Case 2 : Number of coins are odd */
     else{
-        arr.erase(arr.end() - 1);
-        n = n - 1;
+        coins.erase(coins.end() - 1);
+        numberOfCoins = numberOfCoins - 1;
         int counter = 0;
-        while(counter < n-1){
-            if(compare(arr[counter], arr[counter + 1])){
-                aux.push_back(arr[counter]);
+        while(counter < numberOfCoins-1){
+            if(balance(coins[counter], coins[counter + 1])){
+                aux.push_back(coins[counter]);
             }
-            steps += 1;
+            weighings += 1;
             counter += 2;
         }
         if(aux.size() % 2 == 1){
@@ -94,7 +73,8 @@ int weightOfGenuineCoin(int n, vector<int> arr){
     }
 }
 
-int compare(int w1, int w2){
+/* Helper function */
+int balance(int w1, int w2){
     if(w1 == w2){
         return 1;
     }
