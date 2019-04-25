@@ -325,8 +325,8 @@ g++ GoldCoins.cpp
 ```
 #### output
 ```
-Weight: 0
-weighings: 2
+Weight of the genuine coin: 0
+Number of weighings required: 2
 ```
 
 #### input
@@ -336,8 +336,8 @@ weighings: 2
 ```
 #### output
 ```
-Weight: 0
-weighings: 4
+Weight of the genuine coin: 0
+Number of weighings required: 4
 ```
 
 

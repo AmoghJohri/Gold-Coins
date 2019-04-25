@@ -20,8 +20,8 @@ int main(){
     }
     token = coins[coins.size() - 1];    // Last coin
 
-    cout<<"Weight: "<< weightOfGenuineCoin(numberOfCoins, coins)<<endl;
-    cout<<"weighings: "<< weighings << endl;
+    cout<<"Weight of the genuine coin: "<< weightOfGenuineCoin(numberOfCoins, coins)<<endl;
+    cout<<"Number of weighings required: "<< weighings << endl;
    return 0;
 }
 
