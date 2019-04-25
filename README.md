@@ -228,9 +228,9 @@ For *(k + 1)* coins we have,
             
             2. The leftmost bit changes from 1 to 0:
 
-                - n + 1 -> (0(2<sup>(k+1)</sup>) + Sum(x(i)2<sup>(i)</sup>))
+                - n + 1 : (0(2<sup>(k+1)</sup>) + Sum(x(i)2<sup>(i)</sup>))
                     
-                    n -> (2<sup>(k+1)</sup>) + Sum(y(i)2<sup>(i)</sup>)
+                    n : (2<sup>(k+1)</sup>) + Sum(y(i)2<sup>(i)</sup>)
 
                     n - (n + 1) > 0 which is not possible hence a contradiction.
         
@@ -265,7 +265,7 @@ For *(k + 1)* coins we have,
 
             - Now the number of comparisons are greater for a greater number of coins.
 
-            - For a single type of coin, the highest number coins which can be added to the aux array is bounded by (n/2) -> if n coins of one type are present.
+            - For a single type of coin, the highest number coins which can be added to the aux array is bounded by (n/2) : if n coins of one type are present.
 
             - Therefore, for (k/2) gold coins and (k/2) fake coins, the maximum length aux array consists of (k/4) gold coins and (k/4) fake coins. For a k-array, k being even, number of comparisons are (k/2).
 
