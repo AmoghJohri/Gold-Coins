@@ -102,34 +102,47 @@ Works correctly for *k* coins.
 For *k + 1* coins, we have:
 1. *k* is even, i.e. *k + 1* is odd
 
-- Pop the last element and store it.
+    - Pop the last element and store it.
 
-- We have *k* elements left.
+    - We have *k* elements left.
 
-- There can be 2 cases:
+    - There can be 2 cases:
 
-    - **Case 1**: There are *> k/2* gold coins.
+        - **Case 1**: There are *> k/2* gold coins.
 
-        - This is lower bounded by *k/2 + 1* which is - 
-            *k/2 + 1 > k/2 + 1/2 = (k + 1)/2*
+            - This is lower bounded by *k/2 + 1* which is 
+                *k/2 + 1 > k/2 + 1/2 = (k + 1)/2*
 
-        - Therefore, there is a majority element in the complete array.
+            - Therefore, there is a majority element in the complete array.
 
-        - As we know our algoritm can find the majority element in a k-array(inductive hypothesis), this can be solved.
+            - As we know our algoritm can find the majority element in a k-array(inductive hypothesis), this can be solved.
 
-    - **Case 2**: There are exactly *k/2* gold coins
+        - **Case 2**: There are exactly *k/2* gold coins
 
-        - Irrespective of the arrangement of the coins in the array, in every subsequent step, our new array will be an even length array.
+            - Irrespective of the arrangement of the coins in the array, in every subsequent step, our new array will be an even length array.
 
-        - As for every operation carried out over one type of coin, an anlogous operation will occur with the other type of coin, since they are equal in number.
+            - As for every operation carried out over one type of coin, an anlogous operation will occur with the other type of coin, since they are equal in number.
 
-        - Therefore, we end up with an even array of equal number of gold and fakr coins due to symmetry.
+            - Therefore, we end up with an even array of equal number of gold and fakr coins due to symmetry.
 
-        - This will finally lead to the case where we get an empty array and here we return the stored value of the last element of the original array as the genuine gold coin.
-        *last element + k/2 = k/2 + 1 > (k+1)/2*
+            - This will finally lead to the case where we get an empty array and here we return the stored value of the last element of the original array as the genuine gold coin.
+            *last element + k/2 = k/2 + 1 > (k+1)/2*
 
-2. *k* 
+2. *k* is odd, i.e. *k + 1* is even.
 
+    - Consider the first *k* elements.
+
+    - Since *k* is odd, we get *g* genuine coins and *f* fake coins.
+
+    - *g < f* is not possible since if *g < f*, then *f* is at least *g + 1*, so that  if the *(k + 1)th* coin is genuine, then there'll be equal number of genuine and fake coins which is a contradiction.
+
+    - Also, *g = f* is also not possible, since *k* is odd.
+
+    - Therefore, *g > f*, *g* is lower bounded by *(f + 1)*.
+
+    - For *g > (f + 1)*, the majority element in the k-array is the majority element in the entire array. 
+
+    - And for *g = (f + 1)*, *g* is the majority in  the k-array. Now, if the last coin is a genuine coin, *g* is still the majority. The last coin cannot be fake since then *g* will be equal to *f* which is a contradiction. 
 
 
 ## Instructions To Compile And Run
