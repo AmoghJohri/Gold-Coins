@@ -58,6 +58,17 @@ Weight: 0
 weighings: 2
 ```
 
+#### input
+```
+9
+1 0 0 1 0 0 1 0 1
+```
+#### output
+```
+Weight: 0
+weighings: 4
+```
+
 
 ## Contributors
 - [Advait Lonkar](https://github.com/advait-l) 
