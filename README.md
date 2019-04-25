@@ -27,6 +27,53 @@ number of 1s in the binary representation of ​*n*.
 - [ ] Subfolder of test cases
     - [ ] Document detailing format of test cases, input and expected output
 
+## Pseudo-code
+```
+steps = 0
+BALANCE(w1, w2)
+    if w1 == w2
+        return 1
+    return 0
+
+WEIGHT-OF-GENUINE-COIN(n, coins)
+    aux = []
+    if n is even:
+        counter = 0
+        while counter < n:
+            if BALANCE(coins[counter], coins[counter + 1])
+                aux.append()
+            steps = steps + 1
+            counter = counter + 2
+        if aux.len == 1:
+            return aux[0]
+        else if aux.len == 0:
+            return the last element of coins
+        else 
+            return WEIGHT-OF-GENUINE-COIN(aux.len, aux)
+
+    else:
+        remove the last element of coins
+        n = n - 1
+        counter = 0
+        while counter < n - 1:
+            if BALANCE(coins[counter], coins[counter + 1])
+                aux.append()
+            steps = steps + 1
+            counter = counter + 2
+        if aux.len == 1:
+            return aux[0]
+        else if aux.len == 0:
+            return the last element of the aux
+        else:
+            return WEIGHT-OF-GENUINE-COIN(aux.len, aux)
+
+In the main:
+    input n - the number of coins
+    input coins - an array of 0s and 1s
+    print "Weight of the genuine coin : " + WEIGHT-OF-GENUINE-COIN(n coins)
+    print "Number of steps required : " + steps
+```
+
 ## Instructions to compile and run
 - Compile the source code GoldCoins.cpp using g++
 ```
