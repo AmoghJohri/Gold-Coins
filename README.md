@@ -185,54 +185,54 @@ For *(k + 1)* coins we have,
 
     **Proof by induction** : 
 
-        - Base case:
+    - Base case:
 
-            Binary representation of length 1 which is odd i.e. n = 1; B(n) = 1.
+        Binary representation of length 1 which is odd i.e. n = 1; B(n) = 1.
 
-            n + 1 = 10; B(n + 1) = 1
+        n + 1 = 10; B(n + 1) = 1
 
-            B(n + 1) - B(n) = 1 - 1 = 0 <= 1
-            Hence proved
+        B(n + 1) - B(n) = 1 - 1 = 0 <= 1
+        Hence proved
 
-        - Induction Hypothesis: 
+    - Induction Hypothesis: 
 
-            Works with binary representation of length k which is odd.
+        Works with binary representation of length k which is odd.
 
-        - Inductive Step:
+    - Inductive Step:
 
-            In the binary representation of length (k + 1), we have two cases:
+        In the binary representation of length (k + 1), we have two cases:
 
-            1. The leftmost bit does not change:
-                
-                Proof by induction hypothesis.
+        1. The leftmost bit does not change:
+            
+            Proof by induction hypothesis.
 
-            2. 1. The leftmost bit changes from 0 to 1:
+        2. 1. The leftmost bit changes from 0 to 1:
 
-                    - This number will be of the form: (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + x(k-1)2<sup>(k-1)</sup> + . . . + 0)
+                - This number will be of the form: (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + x(k-1)2<sup>(k-1)</sup> + . . . + 0)
 
-                        i.e. (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + . . . + 0) - (y(k)2<sup>(k)</sup> + . . . + 1) = 1
+                    i.e. (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + . . . + 0) - (y(k)2<sup>(k)</sup> + . . . + 1) = 1
 
-                        i.e. (2<sup>(k+1)</sup> - 1) - Sum(2<sup>(i)</sup>x(i)) = 1
+                    i.e. (2<sup>(k+1)</sup> - 1) - Sum(2<sup>(i)</sup>x(i)) = 1
 
-                        i.e. 2<sup>(k)</sup> - 1 = Sum(2<sup>(i)</sup>x(i))
+                    i.e. 2<sup>(k)</sup> - 1 = Sum(2<sup>(i)</sup>x(i))
 
-                        But 2<sup>(k)</sup> - 1 = Sum(2<sup>(i-1)</sup>).1
+                    But 2<sup>(k)</sup> - 1 = Sum(2<sup>(i-1)</sup>).1
 
-                        Therefore, x(i) = 1
+                    Therefore, x(i) = 1
 
-                    - Binary representation of B(n) = k-ones (0111...111)
+                - Binary representation of B(n) = k-ones (0111...111)
 
-                    - Binary representation of B(n + 1) = 1 one and k-zeroes (1000...0)
+                - Binary representation of B(n + 1) = 1 one and k-zeroes (1000...0)
 
-                    - Clearly, (1 - k) <= 1 since k >= 0  
-                
-                2. The leftmost bit changes from 1 to 0:
+                - Clearly, (1 - k) <= 1 since k >= 0  
+            
+            2. The leftmost bit changes from 1 to 0:
 
-                    - n + 1 -> (0(2<sup>(k+1)</sup>) + Sum(x(i)2<sup>(i)</sup>))
-                        
-                        n -> (2<sup>(k+1)</sup>) + Sum(y(i)2<sup>(i)</sup>)
+                - n + 1 -> (0(2<sup>(k+1)</sup>) + Sum(x(i)2<sup>(i)</sup>))
+                    
+                    n -> (2<sup>(k+1)</sup>) + Sum(y(i)2<sup>(i)</sup>)
 
-                        n - (n + 1) > 0 which is not possible hence a contradiction.
+                    n - (n + 1) > 0 which is not possible hence a contradiction.
         
     - Therefore, B(n) - B(n + 1) <= 1 for n being odd.
     
