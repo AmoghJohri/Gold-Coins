@@ -89,7 +89,7 @@ b. number of coins = 2
     Hence proved by case a.
 #### Induction Hypothesis:
 Works correctly for *k* coins.
-####Inductive Step:
+#### Inductive Step:
 For *k + 1* coins, we have:
 a. *k* is even, i.e. *k + 1* is odd
 Pop the last element and store it.
