@@ -206,7 +206,7 @@ For *(k + 1)* coins we have,
                 
                 Proof by induction hypothesis.
 
-            2. a. The leftmost bit changes from 0 to 1:
+            2. 1. The leftmost bit changes from 0 to 1:
 
                 - This number will be of the form: (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + x(k-1)2<sup>(k-1)</sup> + . . . + 0)
 
@@ -226,7 +226,7 @@ For *(k + 1)* coins we have,
 
                 - Clearly, (1 - k) <= 1 since k >= 0  
             
-                b. The leftmost bit changes from 1 to 0:
+                2. The leftmost bit changes from 1 to 0:
 
                 - n + 1 -> (0(2<sup>(k+1)</sup>) + Sum(x(i)2<sup>(i)</sup>))
                     
