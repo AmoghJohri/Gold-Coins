@@ -173,9 +173,9 @@ For *(k + 1)* coins we have,
 1. If *k* is odd, i.e. *(k + 1)* is even.
     - Now, (k - B(k)) < ((k + 1) - B(k + 1))
 
-    - (x1x2x3...xi1) : Binary representation of k, as k is odd; where xi is 0 or 1.
+    - (x(1)x(2)x(3)...x(i)1) : Binary representation of k, as k is odd; where x(i) is 0 or 1.
 
-    - (y1y2y3...yi0) : Binary representation of (k + 1), as k is odd; where yi is 0 or 1.
+    - (y(1)y(2)y(3)...y(i)0) : Binary representation of (k + 1), as k is odd; where y(i) is 0 or 1.
 
     - k - B(k) <= (k + 1) - B(k + 1)
 
@@ -183,8 +183,127 @@ For *(k + 1)* coins we have,
 
       B(k + 1) - B(k) <= 1
 
-    - **Proof by induction** : 
-        -
+      **Proof by induction** : 
+
+        - Base case:
+
+            Binary representation of length 1 which is odd i.e. n = 1; B(n) = 1.
+
+            n + 1 = 10; B(n + 1) = 1
+
+            B(n + 1) - B(n) = 1 - 1 = 0 <= 1
+            Hence proved
+
+        - Induction Hypothesis: 
+
+            Works with binary representation of length k which is odd.
+
+        - Inductive Step:
+
+            In the binary representation of length (k + 1), we have two cases:
+
+            1. The leftmost bit does not change:
+                
+                Proof by induction hypothesis.
+
+            2. a. The leftmost bit changes from 0 to 1:
+
+                - This number will be of the form: (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + x(k-1)2<sup>(k-1)</sup> + . . . + 0)
+
+                    i.e. (2<sup>(k+1)</sup> + x(k)2<sup>(k)</sup> + . . . + 0) - (y(k)2<sup>(k)</sup> + . . . + 1) = 1
+
+                    i.e. (2<sup>(k+1)</sup> - 1) - Sum(2<sup>(i)</sup>x(i)) = 1
+
+                    i.e. 2<sup>(k)</sup> - 1 = Sum(2<sup>(i)</sup>x(i))
+
+                    But 2<sup>(k)</sup> - 1 = Sum(2<sup>(i-1)</sup>).1
+
+                    Therefore, x(i) = 1
+
+                - Binary representation of B(n) = k-ones (0111...111)
+
+                - Binary representation of B(n + 1) = 1 one and k-zeroes (1000...0)
+
+                - Clearly, (1 - k) <= 1 since k >= 0  
+            
+                b. The leftmost bit changes from 1 to 0:
+
+                - n + 1 -> (0(2<sup>(k+1)</sup>) + Sum(x(i)2<sup>(i)</sup>))
+                    
+                     n -> (2<sup>(k+1)</sup>) + Sum(y(i)2<sup>(i)</sup>)
+
+                     n - (n + 1) > 0 which is not possible hence a contradiction.
+    
+    - Therefore, B(n) - B(n + 1) <= 1 for n being odd.
+    
+    - B(n) is solved in <= n - B(n) steps by inductive hypothesis.
+
+    - B(n + 1) is solved in <= n - B(n) <= (n + 1) - B(n + 1) steps.
+
+    Hence proved.
+
+2.  If k is even, i.e. (k + 1) is odd.
+    
+    k - B(k) = (k + 1) - B(k + 1)
+
+    - Now, from the proof of correctness, we pop the last element and work with the k-length array where k is even.
+
+    - This forms two cases:
+        - Case 1:
+
+            - We find a majority element in the k-array hten, number of that majority element is lower bounded by (k/2 + 1).
+
+            - It forms the majority for (k + 1) elements as well irrespective of the type of (k + 1)th element.
+
+            - Since the majority element of k-array can be found in k - B(k) comparisons by inductive hypothesis, the (k + 1)-array can be solved in (k + 1) - B(k + 1) comparisons.
+
+        - Case 2:
+
+            - No majority element exists in the first k-elements i.e. it has (k/2) gold coins and (k/2) fake coins.
+
+            - By symmetry, for every gold coin added to the aux array, we have a fake coin that can be added to the aux array.
+
+            - Now the number of comparisons are greater for a greater number of coins.
+
+            - For a single type of coin, the highest number coins which can be added to the aux array is bounded by (n/2) -> if n coins of one type are present.
+
+            - Therefore, for (k/2) gold coins and (k/2) fake coins, the maximum length aux array consists of (k/4) gold coins and (k/4) fake coins. For a k-array, k being even, number of comparisons are (k/2).
+
+            - Now, total number of comparisons till we obtain an array of 0 length is = 
+                (k/2 + k/4 + . . . + 1)
+
+                = (1 + 2  + 4 + . . . + k/2)
+
+                = 1(1 - 2<sup>(log(k/2))</sup>)/(1 - 2)
+
+                = (2<sup>(log(k/2))</sup> - 1)<sup>2</sup>
+
+                = 2<sup>(log(k) / log(2))</sup> - 1
+
+                = 2<sup>(log(k))</sup> - 1
+
+                = (k - 1) comparisons  
+
+            - Now, the upper bound is achieved for k being divisible by 2, 4, 8, . . ., (k/2)
+
+                So, k is some power of 2.
+
+                So the number of comparisons is maximum for k being a power of 2.
+
+                Therefore, B(k) = 1
+
+                Comparisons required = (k - 1) = k - B(k)
+
+                = (k + 1) - B(k + 1)
+
+            Hence proved.
+
+
+                
+                 
+
+
+
     
 
 ## Instructions To Compile And Run
