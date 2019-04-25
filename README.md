@@ -179,9 +179,9 @@ For *(k + 1)* coins we have,
 
     - Now, k - B(k) <= (k + 1) - B(k + 1)
 
-    -1 <= B(k) - B(k + 1)
+        -1 <= B(k) - B(k + 1)
 
-    B(k + 1) - B(k) <= 1
+        B(k + 1) - B(k) <= 1
 
     - **Proof by induction**
     
