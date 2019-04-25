@@ -78,20 +78,26 @@ In the main:
 ### Proof Of Correctness 
 Proving by induction
 #### Base Cases:
-a. number of coins = 1
+1. number of coins = 1
     Pop the element since it is odd.
+
     Array formed is empty.
+
     Therefore, the answer is the only coin present.
-b. number of coins = 2
+
+2. number of coins = 2
+
     Compare the elements.
     (No case possible where they are equal)
+    
     New array consists of 1 coin.
+    
     Hence proved by case a.
 #### Induction Hypothesis:
 Works correctly for *k* coins.
 #### Inductive Step:
 For *k + 1* coins, we have:
-a. *k* is even, i.e. *k + 1* is odd
+1. *k* is even, i.e. *k + 1* is odd
 Pop the last element and store it.
 We have *k* elements left.
 There can be 2 cases:
