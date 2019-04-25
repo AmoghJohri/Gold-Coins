@@ -47,12 +47,12 @@ WEIGHT-OF-GENUINE-COIN(n, coins)
         if aux.len == 1:
             return aux[0]
         else if aux.len == 0:
-            return the last element of coins
+            return the last coin of coins
         else 
             return WEIGHT-OF-GENUINE-COIN(aux.len, aux)
 
     else:
-        remove the last element of coins
+        remove the last coin of coins
         n = n - 1
         counter = 0
         while counter < n - 1:
@@ -63,7 +63,7 @@ WEIGHT-OF-GENUINE-COIN(n, coins)
         if aux.len == 1:
             return aux[0]
         else if aux.len == 0:
-            return the last element of the aux
+            return the last coin of the aux
         else:
             return WEIGHT-OF-GENUINE-COIN(aux.len, aux)
 
@@ -74,13 +74,13 @@ In the main:
     print "Number of steps required : " + steps
 ```
 
-## Proof of the algorithm  
+## Proof Of The Algorithm  
 ### Proof Of Correctness 
 Proving by induction
 #### Base Cases:
 1. number of coins = 1
 
-    - Pop the element since it is odd.
+    - Pop the coin since it is odd.
 
     - Array formed is empty.
 
@@ -102,7 +102,7 @@ Works correctly for *k* coins.
 For *k + 1* coins, we have:
 1. *k* is even, i.e. *k + 1* is odd
 
-    - Pop the last element and store it.
+    - Pop the last coin and store it.
 
     - We have *k* elements left.
 
@@ -113,9 +113,9 @@ For *k + 1* coins, we have:
             - This is lower bounded by *k/2 + 1* which is 
                 *k/2 + 1 > k/2 + 1/2 = (k + 1)/2*
 
-            - Therefore, there is a majority element in the complete array.
+            - Therefore, there is a majority coin in the complete array.
 
-            - As we know our algoritm can find the majority element in a k-array(inductive hypothesis), this can be solved.
+            - As we know our algoritm can find the majority coin in a k-array(inductive hypothesis), this can be solved.
 
         - **Case 2**: There are exactly *k/2* gold coins
 
@@ -125,8 +125,8 @@ For *k + 1* coins, we have:
 
             - Therefore, we end up with an even array of equal number of gold and fakr coins due to symmetry.
 
-            - This will finally lead to the case where we get an empty array and here we return the stored value of the last element of the original array as the genuine gold coin.
-            *last element + k/2 = k/2 + 1 > (k+1)/2*
+            - This will finally lead to the case where we get an empty array and here we return the stored value of the last coin of the original array as the genuine gold coin.
+            *last coin + k/2 = k/2 + 1 > (k+1)/2*
 
 2. *k* is odd, i.e. *k + 1* is even.
 
@@ -140,10 +140,51 @@ For *k + 1* coins, we have:
 
     - Therefore, *g > f*, *g* is lower bounded by *(f + 1)*.
 
-    - For *g > (f + 1)*, the majority element in the k-array is the majority element in the entire array. 
+    - For *g > (f + 1)*, the majority coin in the k-array is the majority coin in the entire array. 
 
     - And for *g = (f + 1)*, *g* is the majority in  the k-array. Now, if the last coin is a genuine coin, *g* is still the majority. The last coin cannot be fake since then *g* will be equal to *f* which is a contradiction. 
 
+Therefore, the majority in the k-array is the majority in the (k + 1)-array.
+
+Hence proved.
+
+### Proof of Running Time
+#### Base Cases:
+1. number of coins = 1
+    - Pop the last coin.
+
+    - Array formed is empty. So the genuine coin is the only coin.
+
+    - Comparisons required = 0 <= *n - B(n)* = 1 - 1 = 0
+
+2. number of coins = 2
+    - Compare the coins. (No case possible where they are equal)
+
+    - Array formed contains 1 coin, which is proved by the above case.
+
+    - Comparisons required = 1 <= *n - B(n)* = 2 - 1 = 1
+
+#### Induction Hypothesis:
+Works for *k* coins in <= *k - B(k)* comparisons.
+
+#### Inductive Step:
+For *(k + 1)* coins we have, 
+
+1. If *k* is odd, i.e. *(k + 1)* is even.
+    - Now, (k - B(k)) < ((k + 1) - B(k + 1))
+
+    - (x1x2x3...xi1) : Binary representation of k, as k is odd; where xi is 0 or 1.
+
+    - (y1y2y3...yi0) : Binary representation of (k + 1), as k is odd; where yi is 0 or 1.
+
+    - Now, k - B(k) <= (k + 1) - B(k + 1)
+
+    -1 <= B(k) - B(k + 1)
+
+    B(k + 1) - B(k) <= 1
+
+    - **Proof by induction**
+    
 
 ## Instructions To Compile And Run
 - Compile the source code GoldCoins.cpp using g++
