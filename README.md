@@ -177,13 +177,14 @@ For *(k + 1)* coins we have,
 
     - (y1y2y3...yi0) : Binary representation of (k + 1), as k is odd; where yi is 0 or 1.
 
-    - Now, k - B(k) <= (k + 1) - B(k + 1)
+    - k - B(k) <= (k + 1) - B(k + 1)
 
-        -1 <= B(k) - B(k + 1)
+      -1 <= B(k) - B(k + 1)
 
-        B(k + 1) - B(k) <= 1
+      B(k + 1) - B(k) <= 1
 
-    - **Proof by induction**
+    - **Proof by induction** : 
+        -
     
 
 ## Instructions To Compile And Run
