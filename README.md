@@ -32,6 +32,31 @@ number of 1s in the binary representation of ​*n*.
 ```
 g++ GoldCoins.cpp
 ```
+- a.out file will be generated
+- Run the generated a.out file as follows : 
+```
+./a.out
+```
+### Input
+- The first line contains the integer *n* - the number of gold coins.
+- The next line contains *n* space-separated 0s or 1s denoting the two different weights of the genuine and fake coins.
+- Make sure the genuine coins are more than half of the total coins.
+
+### Output
+- The first contains gives the weight of the genuine coin.
+- The second line contains the number of weighings required to arrive at the genuine coin.
+
+### Examples
+#### input
+```
+5
+1 0 0 1 0
+```
+#### output
+```
+Weight: 0
+weighings: 2
+```
 
 
 ## Contributors
