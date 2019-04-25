@@ -17,10 +17,10 @@ number of 1s in the binary representation of ​*n*.
 - [x] Header files
 - [x] makefile
 - [ ] README
-    - [ ] Sources referred
-    - [ ] Data structures
+    - [x] Sources referred
+    - [x] Data structures
     - [x] Pseudo-code
-    - [ ] Proof of correctness
+    - [x] Proof of correctness
     - [x] Instructions to compile and run
     - [ ] Defects/Side-effects
     - [ ] Individual contributions
