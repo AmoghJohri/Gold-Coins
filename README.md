@@ -13,7 +13,7 @@ algorithm that finds a genuine coin in ​*n-B(n)* weighings, where ​*B(n)* de
 number of 1s in the binary representation of ​*n*.
 
 ## Task List
-- [ ] Source files
+- [x] Source files
 - [x] Header files
 - [x] makefile
 - [ ] README
@@ -26,6 +26,13 @@ number of 1s in the binary representation of ​*n*.
     - [ ] Individual contributions
 - [ ] Subfolder of test cases
     - [ ] Document detailing format of test cases, input and expected output
+
+## Instructions to compile and run
+- Compile the source code GoldCoins.cpp using g++
+```
+g++ GoldCoins.cpp
+```
+
 
 ## Contributors
 - [Advait Lonkar](https://github.com/advait-l) 
