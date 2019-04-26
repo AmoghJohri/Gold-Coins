@@ -1,7 +1,7 @@
 # Gold-Coins
 
 ## Table Of Contents
-[Problem Statement][Problem Statement]
+[Problem Statement](#problem-statement)
 
 ## Problem Statement
 We have ​*n* ​gold coins out of which some coins are fake and the rest are
