@@ -250,7 +250,7 @@ For *(k + 1)* coins we have,
     - This forms two cases:
         - Case 1:
 
-            - We find a majority element in the k-array hten, number of that majority element is lower bounded by (k/2 + 1).
+            - We find a majority element in the k-array then, number of that majority element is lower bounded by (k/2 + 1).
 
             - It forms the majority for (k + 1) elements as well irrespective of the type of (k + 1)th element.
 
@@ -268,7 +268,7 @@ For *(k + 1)* coins we have,
 
             - Therefore, for (k/2) gold coins and (k/2) fake coins, the maximum length aux array consists of (k/4) gold coins and (k/4) fake coins. For a k-array, k being even, number of comparisons are (k/2).
 
-            - Now, total number of comparisons till we obtain an array of 0 length is upper bounded by (assuming the case where the first k/2 elements are of the same type and the next k/2 of the same type, in case this is not the case, the same number of comparisions produce a smaller array) = 
+            - Now, total number of comparisons till we obtain an array of 0 length is upper bounded by (assuming the case where the first k/2 elements are of the same type and the next k/2 of the same type, in case this is not true, the same number of comparisions produce a smaller array) = 
                 (k/2 + k/4 + . . . + 1)
 
                 = (1 + 2  + 4 + . . . + k/2)
@@ -293,7 +293,9 @@ For *(k + 1)* coins we have,
 
                 Comparisons required = (k - 1) = k - B(k)
 
-                = (k + 1) - B(k + 1)
+                = (k + 1) - B(k + 1) 
+              
+              (For the case where k is not a power of 2, from the inductive hypothesis and the proof for k+1 being even, we have that it will converge to an empty array in k - B(k) steps. Hence, as k - B(k) = (k + 1) - B(k + 1) we can state that, the k elements converge to an empty array in (k + 1) - B(k + 1) steps and then, as per the algorithm, we return the element stored as the token. Hence, the algorithm runs in a maximum of (k + 1) - B(k + 1) steps for an array of k + 1 elements).
 
             Hence proved.            
                  
@@ -343,10 +345,12 @@ Number of weighings required: 4
 ## Contributors
 - [Advait Lonkar](https://github.com/advait-l)
     - GoldCoins.cpp
-    - Proof Of Correctness
+    - Proof Of Running Time
+    - Instructions To Compile and Run
     - README.md
 - [Amogh Johri](https://github.com/AmoghJohri) 
     - PerformanceAnalyser.cpp
-    - Proof Of Running Time
+    - Pseudo-code
+    - Proof Of Correctness
     - Test Cases
 
