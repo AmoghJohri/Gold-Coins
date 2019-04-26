@@ -1,0 +1,9 @@
+87
+0 1 1 0 0 0 1 1 1 1 0 1 0 1 0 1 1 1 1 1 1 1 0 1 0 0 1 1 0 0 1 1 0 1 1 0 1 0 1 0 0 0 1 0 1 1 1 1 0 1 0 1 0 0 1 0 0 0 1 0 0 0 1 0 1 1 0 1 1 0 1 1 0 1 1 1 0 1 0 1 0 0 0 0 0 1 0 
+
+Number of coins: 87
+Weight of genuine coin: 1
+Number of Weighings: 55
+Number of Weighing permitted: 82
+Num Of 1s : 46
+Num Of 0s : 41

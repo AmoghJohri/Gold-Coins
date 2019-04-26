@@ -1,0 +1,9 @@
+6
+1 1 1 0 0 1 
+
+Number of coins: 6
+Weight of genuine coin: 1
+Number of Weighings: 3
+Number of Weighing permitted: 4
+Num Of 1s : 4
+Num Of 0s : 2

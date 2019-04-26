@@ -1,0 +1,9 @@
+50
+1 0 0 0 0 0 1 0 1 1 1 1 0 0 0 1 1 1 0 1 1 1 1 1 1 1 1 0 0 0 1 1 0 1 1 1 1 0 1 1 0 0 0 0 1 1 1 0 0 1 
+
+Number of coins: 50
+Weight of genuine coin: 1
+Number of Weighings: 35
+Number of Weighing permitted: 47
+Num Of 1s : 29
+Num Of 0s : 21
