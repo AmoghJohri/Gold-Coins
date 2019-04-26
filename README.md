@@ -21,21 +21,6 @@ coin. This uses ​*n-1*​ weighings. We want something slightly better. Design
 algorithm that finds a genuine coin in ​*n-B(n)* weighings, where ​*B(n)* denotes the
 number of 1s in the binary representation of ​*n*.
 
-## Task List
-- [x] Source files
-- [x] Header files
-- [x] makefile
-- [ ] README
-    - [x] Sources referred
-    - [x] Data structures
-    - [x] Pseudo-code
-    - [x] Proof of correctness
-    - [x] Instructions to compile and run
-    - [ ] Defects/Side-effects
-    - [ ] Individual contributions
-- [x] Subfolder of test cases
-    - [x] Document detailing format of test cases, input and expected output
-
 ## Pseudo-Code
 The following is the pseudo-code for the algorithm to solve the above problem: 
 
@@ -353,6 +338,12 @@ Number of weighings required: 4
 
 
 ## Contributors
-- [Advait Lonkar](https://github.com/advait-l) 
+- [Advait Lonkar](https://github.com/advait-l)
+    - GoldCoins.cpp
+    - Proof Of Correctness
+    - README.md
 - [Amogh Johri](https://github.com/AmoghJohri) 
+    - PerformanceAnalyser.cpp
+    - Proof Of Running Time
+    - Test Cases
 
