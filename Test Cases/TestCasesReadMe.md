@@ -12,7 +12,9 @@
   5. Number of 1s (or number of coins with one kind of weight)
   6. Number of 0s (number of coins with the other kind of weight)
 
-- This is carried out by the "PerformanceAnalyser.cpp" file. The input for this file is:
+- This is carried out by the "PerformanceAnalyser.cpp" file. 
+
+    The input for this file is:
 '''
  Total Number of Coins (Integer)
 '''
