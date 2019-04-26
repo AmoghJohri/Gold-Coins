@@ -40,8 +40,8 @@ int main(){
     }
 
     
-
-    myfile<<"\n\nWeight of genuine coin: "<< weightOfGenuineCoin(numberOfCoins, coins)<<endl;
+    myfile<<"\n\nNumber of coins: "<< numberOfCoins;
+    myfile<<"\nWeight of genuine coin: "<< weightOfGenuineCoin(numberOfCoins, coins)<<endl;
     myfile<<"Number of Weighings: "<< weighings << endl;
     myfile<<"Number of Weighing permitted: "<< numberOfCoins - B(numberOfCoins) << endl;
     myfile <<"Num Of 1s : " << numOf1s;
