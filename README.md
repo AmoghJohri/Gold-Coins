@@ -1,13 +1,13 @@
 # Gold-Coins
 
 ## Table Of Contents
-1. [Problem Statement](#problem-statement)
-2. [Pseudo-Code](#pseudo-code)
-3. [Proof Of The Algorithm](#proof-of-the-algorithm)
+- [Problem Statement](#problem-statement)
+- [Pseudo-Code](#pseudo-code)
+- [Proof Of The Algorithm](#proof-of-the-algorithm)
     - [Proof Of Correctness](#proof-of-correctness)
     - [Proof Of Running Time](#proof-of-running-time)
-4. [Instructions To Compile And Run](#instructions-to-compile-and-run)
-5. [Contributors](#contributors)
+- [Instructions To Compile And Run](#instructions-to-compile-and-run)
+- [Contributors](#contributors)
 
 ## Problem Statement
 We have ​*n* ​gold coins out of which some coins are fake and the rest are
