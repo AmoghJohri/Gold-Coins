@@ -1,5 +1,8 @@
 # Gold-Coins
 
+## Table Of Contents
+[Problem Statement][Problem Statement]
+
 ## Problem Statement
 We have ​*n* ​gold coins out of which some coins are fake and the rest are
 genuine. The number of genuine coins is strictly greater than the number of fake
@@ -24,8 +27,8 @@ number of 1s in the binary representation of ​*n*.
     - [x] Instructions to compile and run
     - [ ] Defects/Side-effects
     - [ ] Individual contributions
-- [ ] Subfolder of test cases
-    - [ ] Document detailing format of test cases, input and expected output
+- [x] Subfolder of test cases
+    - [x] Document detailing format of test cases, input and expected output
 
 ## Pseudo-code
 The following is the pseudo-code for the algorithm to solve the above problem: 
