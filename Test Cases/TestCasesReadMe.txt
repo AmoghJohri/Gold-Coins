@@ -3,7 +3,7 @@
 -> The second line of the input is an array of the coins (represented as their weights).
 -> At the end of the file there is a report showing :
   a) The total number of coins
-  b) Weight of the genuine coin (expected output)
+  b) Weight of the genuine coin and the number of weighings required in order to obtain it(expected output)
   c) Number of weighings carried out by the algorithm in order to get to the output
   d) Number of weighings permitted (i.e. (n - B(n)) for n coins)
   e) Number of 1s (or number of coins with one kind of weight)
