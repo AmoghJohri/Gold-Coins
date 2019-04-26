@@ -78,7 +78,7 @@ Proving by induction
 
     - Pop the coin since it is odd.
 
-    - Array formed is empty.
+    - New array formed is empty.
 
     - Therefore, the answer is the only coin present.
 
@@ -145,6 +145,9 @@ Therefore, the majority in the k-array is the majority in the (k + 1)-array.
 Hence proved.
 
 ### Proof of Running Time
+
+*Proving that the execution of the algorithm utilises a maximum of n-B(n) number of balance operations*
+
 #### Base Cases:
 1. number of coins = 1
     - Pop the last coin.
@@ -156,7 +159,7 @@ Hence proved.
 2. number of coins = 2
     - Compare the coins. (No case possible where they are equal)
 
-    - Array formed contains 1 coin, which is proved by the above case.
+    - New array formed contains 1 coin, which can be dealt by the above case.
 
     - Comparisons required = 1 <= *n - B(n)* = 2 - 1 = 1
 
@@ -169,13 +172,13 @@ For *(k + 1)* coins we have,
 1. If *k* is odd, i.e. *(k + 1)* is even.
     - Now, (k - B(k)) < ((k + 1) - B(k + 1))
 
-    - (x(1)x(2)x(3)...x(i)1) : Binary representation of k, as k is odd; where x(i) is 0 or 1.
+    - (x(1)x(2)x(3)...x(i)1) : Binary representation of k, as k is odd; where x(i) is 0 or 1. The last bit here is 1.
 
-    - (y(1)y(2)y(3)...y(i)0) : Binary representation of (k + 1), as k is odd; where y(i) is 0 or 1.
+    - (y(1)y(2)y(3)...y(i)0) : Binary representation of (k + 1), as k is odd; where y(i) is 0 or 1. The last bit here is 0.
 
     - k - B(k) <= (k + 1) - B(k + 1)
 
-    -1 <= B(k) - B(k + 1)
+    - 1 <= B(k) - B(k + 1)
 
     B(k + 1) - B(k) <= 1
 
@@ -265,7 +268,7 @@ For *(k + 1)* coins we have,
 
             - Therefore, for (k/2) gold coins and (k/2) fake coins, the maximum length aux array consists of (k/4) gold coins and (k/4) fake coins. For a k-array, k being even, number of comparisons are (k/2).
 
-            - Now, total number of comparisons till we obtain an array of 0 length is = 
+            - Now, total number of comparisons till we obtain an array of 0 length is upper bounded by (assuming the case where the first k/2 elements are of the same type and the next k/2 of the same type, in case this is not the case, the same number of comparisions produce a smaller array) = 
                 (k/2 + k/4 + . . . + 1)
 
                 = (1 + 2  + 4 + . . . + k/2)
