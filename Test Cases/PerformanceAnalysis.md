@@ -1,3 +1,5 @@
+# Performance Analysis
+
 - The first 2 lines of the file consist of (valid) inputs.
 
 - The first line of the input specifies the total number of the coins.
