@@ -28,6 +28,8 @@ number of 1s in the binary representation of ​*n*.
     - [ ] Document detailing format of test cases, input and expected output
 
 ## Pseudo-code
+The following is the pseudo-code for the algorithm to solve the above problem: 
+
 ```
 steps = 0
 BALANCE(w1, w2)
@@ -52,7 +54,7 @@ WEIGHT-OF-GENUINE-COIN(n, coins)
             return WEIGHT-OF-GENUINE-COIN(aux.len, aux)
 
     else:
-        remove the last coin of coins
+        store and remove the last coin of coins
         n = n - 1
         counter = 0
         while counter < n - 1:
